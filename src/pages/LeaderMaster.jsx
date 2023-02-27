@@ -1,5 +1,5 @@
 import EditButton from "../components/EditButton";
-import { getLeaders } from "../scripts/supabaseClient";
+import { getLeaders } from "../scripts/leader";
 import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef, jaJP } from "@mui/x-data-grid";

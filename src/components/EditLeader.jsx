@@ -5,11 +5,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
-import {
-  addLeader,
-  updateLeader,
-  deleteLeader,
-} from "../scripts/supabaseClient";
+import { addLeader, updateLeader, deleteLeader } from "../scripts/leader";
 
 const style = {
   position: "absolute",

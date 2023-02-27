@@ -9,6 +9,7 @@ import Menu from "@mui/material/Menu";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import Link from "@mui/material/Link";
 
 const settings = [
   { key: "leaderMaster", value: "指導者マスタ" },
@@ -46,7 +47,9 @@ export default function TopBar(props) {
     <AppBar position="sticky">
       <Toolbar>
         <Typography variant="h6" noWrap>
-          Tools
+          <Link href="/" underline="none" color="inherit">
+            Tools
+          </Link>
         </Typography>
         <Box components="span" sx={{ flex: 1 }} />
 
