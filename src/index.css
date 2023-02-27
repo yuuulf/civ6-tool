@@ -16,7 +16,7 @@ code {
   padding: 16px;
 }
 
-.command-detail {
+.detail-cell {
   padding-left: 5;
   padding-right: 5;
   white-space: "pre-wrap";

@@ -6,9 +6,9 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
 import {
-  addCommand,
-  updateCommand,
-  deleteCommand,
+  addLeader,
+  updateLeader,
+  deleteLeader,
 } from "../scripts/supabaseClient";
 
 const style = {
@@ -66,7 +66,7 @@ const categories = [
   },
 ];
 
-function EditCommand(props) {
+export default function EditLeader(props) {
   const closeModal = (event, reason) => {
     if (reason !== "escapeKeyDown") {
       props.onClose();
@@ -75,17 +75,14 @@ function EditCommand(props) {
   };
   const [isDisabled, setDisabled] = useState(false);
   const [errors, setError] = useState(null);
-  const categoryRef = useRef(null);
-  const commandRef = useRef(null);
+  const countryRef = useRef(null);
+  const nameRef = useRef(null);
   const detailRef = useRef(null);
-  // const [categoryError, setCategoryError] = useState(false);
-  // const [commandError, setCommandError] = useState(false);
-  // const [detailError, setDetailError] = useState(false);
 
   let isUpdate = false;
   const defaultItem = {
-    category: "チャット",
-    command: "",
+    country: "",
+    name: "",
     detail: "",
   };
 
@@ -93,40 +90,10 @@ function EditCommand(props) {
     isUpdate = true;
     const item = props.item;
     defaultItem.id = item.id;
-    defaultItem.category = item.category;
-    defaultItem.command = item.command;
+    defaultItem.country = item.country;
+    defaultItem.name = item.name;
     defaultItem.detail = item.detail;
   }
-  // const categoryChange = () => {
-  //   if (categoryRef.current) {
-  //     const ref = categoryRef.current;
-  //     if (!ref.validity.valid) {
-  //       setCategoryError(true);
-  //     } else {
-  //       setCategoryError(false);
-  //     }
-  //   }
-  // };
-  // const commandChange = () => {
-  //   if (commandRef.current) {
-  //     const ref = commandRef.current;
-  //     if (!ref.validity.valid) {
-  //       setCommandError(true);
-  //     } else {
-  //       setCommandError(false);
-  //     }
-  //   }
-  // };
-  // const detailChange = () => {
-  //   if (detailRef.current) {
-  //     const ref = detailRef.current;
-  //     if (!ref.validity.valid) {
-  //       setDetailError(true);
-  //     } else {
-  //       setDetailError(false);
-  //     }
-  //   }
-  // };
   return (
     <>
       {props.showModal ? (
@@ -148,20 +115,16 @@ function EditCommand(props) {
             <Box id="keep-mounted-modal-description" sx={{ mt: 2 }}>
               <TextField
                 required
-                id="category"
+                id="country"
                 select
-                label="カテゴリ"
+                label="国"
                 SelectProps={{
                   native: true,
                 }}
                 variant="standard"
                 fullWidth
-                // error={categoryError}
-                // inputProps={{ required: true }}
-                inputRef={categoryRef}
-                defaultValue={defaultItem.category}
-                // helperText={categoryRef?.current?.validationMessage}
-                // onChange={categoryChange}
+                inputRef={countryRef}
+                defaultValue={defaultItem.country}
               >
                 {categories.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -171,31 +134,23 @@ function EditCommand(props) {
               </TextField>
               <TextField
                 required
-                id="command"
-                label="テキストコマンド"
+                id="name"
+                label="指導者"
                 variant="standard"
                 fullWidth
-                // error={commandError}
-                // inputProps={{ required: true, pattern: "^/[a-zA-Z0-9]+$" }}
-                inputRef={commandRef}
-                defaultValue={defaultItem.command}
-                // helperText={commandRef?.current?.validationMessage}
-                // onChange={commandChange}
+                inputRef={nameRef}
+                defaultValue={defaultItem.name}
               />
               <TextField
                 required
                 id="detail"
-                label="内容"
+                label="詳細"
                 multiline
                 rows={4}
                 variant="standard"
                 fullWidth
-                // error={detailError}
-                // inputProps={{ required: true }}
                 inputRef={detailRef}
                 defaultValue={defaultItem.detail}
-                // helperText={detailRef?.current?.validationMessage}
-                // onChange={detailChange}
               />
               {errors ? (
                 <Alert
@@ -221,7 +176,7 @@ function EditCommand(props) {
                       return;
                     }
 
-                    deleteCommand(defaultItem.id);
+                    deleteLeader(defaultItem.id);
                     setDisabled(false);
                     closeModal();
                   }}
@@ -245,30 +200,22 @@ function EditCommand(props) {
                 <Button
                   color="primary"
                   variant="outlined"
-                  disabled={
-                    isDisabled // || categoryError || commandError || detailError
-                  }
+                  disabled={isDisabled}
                   onClick={async () => {
                     setDisabled(true);
-                    // categoryChange();
-                    // commandChange();
-                    // detailChange();
-                    // if (categoryError || commandError || detailError) {
-                    //   return;
-                    // }
 
                     const data = {
-                      category: categoryRef.current.value,
-                      command: commandRef.current.value,
+                      country: countryRef.current.value,
+                      name: nameRef.current.value,
                       detail: detailRef.current.value,
                     };
                     let res;
                     if (isUpdate) {
                       data.id = defaultItem.id;
                       data.updated_at = new Date();
-                      res = await updateCommand(data);
+                      res = await updateLeader(data);
                     } else {
-                      res = await addCommand(data);
+                      res = await addLeader(data);
                     }
 
                     if (res?.error) {
@@ -293,5 +240,3 @@ function EditCommand(props) {
     </>
   );
 }
-
-export default EditCommand;

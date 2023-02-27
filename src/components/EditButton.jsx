@@ -1,11 +1,11 @@
-import EditCommand from "../components/EditCommand";
+import EditLeader from "./EditLeader";
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 import AddIcon from "@mui/icons-material/Add";
 
-function EditButton(props) {
+export default function EditButton(props) {
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => {
     props?.onClose();
@@ -35,16 +35,14 @@ function EditButton(props) {
           新規追加
         </Button>
       )}
-      <EditCommand
+      <EditLeader
         showModal={showModal}
         item={props?.item?.row}
         onClose={() => {
           setShowModal(false);
           closeModal();
         }}
-      ></EditCommand>
+      ></EditLeader>
     </>
   );
 }
-
-export default EditButton;

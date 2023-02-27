@@ -3,28 +3,42 @@ import { createClient } from "@supabase/supabase-js";
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
 const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
-const command = "command";
+const leaderTable = "leader";
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export async function getCommands() {
+export async function getUser() {
+  const session = await supabase.auth.getSession();
+  if (!session.data.session) {
+    return null;
+  }
+
+  const user = await supabase.auth.getUser();
+  return user.data.user;
+}
+
+export async function signOut() {
+  return await supabase.auth.signOut();
+}
+
+export async function getLeaders() {
   return await supabase
-    .from(command)
+    .from(leaderTable)
     .select("*")
     .order("id", { ascending: true });
 }
 
-export async function getCommand(id) {
-  return await supabase.from(command).select("*").eq("id", id);
+export async function getLeader(id) {
+  return await supabase.from(leaderTable).select("*").eq("id", id);
 }
 
-export async function addCommand(data) {
-  return await supabase.from(command).insert([data]);
+export async function addLeader(data) {
+  return await supabase.from(leaderTable).insert([data]);
 }
 
-export async function updateCommand(data) {
-  return await supabase.from(command).upsert(data);
+export async function updateLeader(data) {
+  return await supabase.from(leaderTable).upsert(data);
 }
 
-export async function deleteCommand(id) {
-  return await supabase.from(command).delete().match({ id });
+export async function deleteLeader(id) {
+  return await supabase.from(leaderTable).delete().match({ id });
 }
