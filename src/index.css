@@ -13,7 +13,7 @@ code {
 }
 
 .content {
-  padding: 16px;
+  padding: 8px 64px;
 }
 
 .detail-cell {
@@ -28,4 +28,8 @@ code {
   padding-top: 8px;
   align-items: center;
   justify-content: space-between;
+}
+
+.no-victory {
+  color: #616161;
 }

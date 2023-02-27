@@ -49,7 +49,6 @@ export default function LeaderMaster() {
         <EditButton
           item={params}
           onClose={() => {
-            console.log("re");
             setReload(reload + 1);
           }}
         />
