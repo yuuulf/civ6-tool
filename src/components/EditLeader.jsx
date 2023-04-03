@@ -332,7 +332,7 @@ export default function EditLeader(props) {
                       return;
                     }
 
-                    deleteLeader(defaultItem.id);
+                    await deleteLeader(defaultItem.id);
                     setDisabled(false);
                     closeModal();
                   }}
