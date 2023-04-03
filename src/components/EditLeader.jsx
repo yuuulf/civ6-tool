@@ -21,44 +21,204 @@ const style = {
 
 const categories = [
   {
-    value: "チャット",
-    label: "チャット",
+    value: "アステカ",
+    label: "アステカ",
   },
   {
-    value: "パーティ／ソーシャル",
-    label: "パーティ／ソーシャル",
+    value: "アメリカ",
+    label: "アメリカ",
   },
   {
-    value: "対PC／NPC／オブジェクト",
-    label: "対PC／NPC／オブジェクト",
+    value: "アラビア",
+    label: "アラビア",
   },
   {
-    value: "アクション／ホットバー",
-    label: "アクション／ホットバー",
+    value: "イギリス",
+    label: "イギリス",
   },
   {
-    value: "バトル",
-    label: "バトル",
+    value: "インド",
+    label: "インド",
   },
   {
-    value: "その他の機能",
-    label: "その他の機能",
+    value: "インドネシア",
+    label: "インドネシア",
   },
   {
-    value: "マクロ専用",
-    label: "マクロ専用",
+    value: "エジプト",
+    label: "エジプト",
   },
   {
-    value: "コンフィグ",
-    label: "コンフィグ",
+    value: "オーストラリア",
+    label: "オーストラリア",
   },
   {
-    value: "エモート",
-    label: "エモート",
+    value: "ギリシャ",
+    label: "ギリシャ",
   },
   {
-    value: "メニュー呼び出し",
-    label: "メニュー呼び出し",
+    value: "クメール",
+    label: "クメール",
+  },
+  {
+    value: "コンゴ",
+    label: "コンゴ",
+  },
+  {
+    value: "シュメール",
+    label: "シュメール",
+  },
+  {
+    value: "スキタイ",
+    label: "スキタイ",
+  },
+  {
+    value: "スペイン",
+    label: "スペイン",
+  },
+  {
+    value: "ドイツ",
+    label: "ドイツ",
+  },
+  {
+    value: "ヌビア",
+    label: "ヌビア",
+  },
+  {
+    value: "ノルウェー",
+    label: "ノルウェー",
+  },
+  {
+    value: "ブラジル",
+    label: "ブラジル",
+  },
+  {
+    value: "フランス",
+    label: "フランス",
+  },
+  {
+    value: "ペルシア",
+    label: "ペルシア",
+  },
+  {
+    value: "ポーランド",
+    label: "ポーランド",
+  },
+  {
+    value: "マケドニア",
+    label: "マケドニア",
+  },
+  {
+    value: "ローマ",
+    label: "ローマ",
+  },
+  {
+    value: "ロシア",
+    label: "ロシア",
+  },
+  {
+    value: "中国",
+    label: "中国",
+  },
+  {
+    value: "日本",
+    label: "日本",
+  },
+  {
+    value: "オランダ",
+    label: "オランダ",
+  },
+  {
+    value: "クリー",
+    label: "クリー",
+  },
+  {
+    value: "グルジア",
+    label: "グルジア",
+  },
+  {
+    value: "スコットランド	",
+    label: "スコットランド	",
+  },
+  {
+    value: "ズールー",
+    label: "ズールー",
+  },
+  {
+    value: "マプチェ",
+    label: "マプチェ",
+  },
+  {
+    value: "モンゴル",
+    label: "モンゴル",
+  },
+  {
+    value: "韓国	",
+    label: "韓国	",
+  },
+  {
+    value: "インカ",
+    label: "インカ",
+  },
+  {
+    value: "オスマン",
+    label: "オスマン",
+  },
+  {
+    value: "カナダ",
+    label: "カナダ",
+  },
+  {
+    value: "スウェーデン",
+    label: "スウェーデン",
+  },
+  {
+    value: "ハンガリー",
+    label: "ハンガリー",
+  },
+  {
+    value: "フェニキア",
+    label: "フェニキア",
+  },
+  {
+    value: "マオリ",
+    label: "マオリ",
+  },
+  {
+    value: "マリ	",
+    label: "マリ	",
+  },
+  {
+    value: "マヤ",
+    label: "マヤ",
+  },
+  {
+    value: "大コロンビア",
+    label: "大コロンビア",
+  },
+  {
+    value: "エチオピア",
+    label: "エチオピア",
+  },
+  {
+    value: "ビザンティン	",
+    label: "ビザンティン	",
+  },
+  {
+    value: "ガリア",
+    label: "ガリア",
+  },
+  {
+    value: "バビロン",
+    label: "バビロン",
+  },
+  {
+    value: "ベトナム",
+    label: "ベトナム",
+  },
+  {
+    value: "ポルトガル	",
+    label: "ポルトガル	",
   },
 ];
 
